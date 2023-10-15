@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import com.tradiesKraken.Exception.ResourceNotFoundException;
 import com.tradiesKraken.Model.Location;
 import com.tradiesKraken.Model.User;
