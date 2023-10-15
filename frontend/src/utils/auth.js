@@ -1,10 +1,9 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const API_BASE_URL = "http://localhost:8080/auth";
 
 export const authenticateUser = async (email, password) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   try {
     const response = await axios.post(`${API_BASE_URL}/login`, {
@@ -13,7 +12,7 @@ export const authenticateUser = async (email, password) => {
     });
     console.log(response);
     const { token, user } = response.data;
-    navigate("/");
+
     localStorage.setItem("token", token);
     return user;
   } catch (error) {

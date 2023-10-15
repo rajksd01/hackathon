@@ -1,8 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "../Pages/Login.jsx";
-import Signup from "../Pages/Signup.jsx"
+import Signup from "../Pages/Signup.jsx";
 import Home from "../Pages/Home.jsx";
-import Category from "../components/ServiceCategory.jsx"
+import Category from "../components/ServiceCategory.jsx";
 
 function Body() {
   const appRouter = createBrowserRouter([
@@ -19,10 +19,9 @@ function Body() {
       element: <Signup />,
     },
     {
-      path:"/category",
-      element:<Category/>
+      path: "/category",
+      element: <Category />,
     },
-   
   ]);
   return (
     <div>
