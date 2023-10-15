@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../constants/images/logo.jpeg";
@@ -58,7 +58,6 @@ const SignupForm = () => {
                 values.pincode
               );
               console.log(userData);
-              
             } catch (error) {
               console.error("Authentication error: ", error);
             }

@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import logo from "../constants/images/logo.png";
 
-import { useState } from "react";
-
 function Header() {
   //  const [isOpen, setIsOpen] = useState(false);
   // const [loggedIn, setLoggedIn] = useState("null");
@@ -52,7 +50,6 @@ function Header() {
                       Login/Signup
                     </h2>
                   </Link>
-                  
                 </div>
               </div>
             </div>
