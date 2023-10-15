@@ -11,9 +11,12 @@ import com.tradiesKraken.Exception.ResourceNotFoundException;
 import com.tradiesKraken.Model.Location;
 import com.tradiesKraken.Model.User;
 import com.tradiesKraken.ModelDto.UserDto;
+// import com.tradiesKraken.Payload.GeocodingResponse;
+// import com.tradiesKraken.Payload.Geometry;
 import com.tradiesKraken.Payload.ModelToDto;
 import com.tradiesKraken.Payload.SignUpRequest;
 import com.tradiesKraken.Repository.UserRepository;
+// import com.tradiesKraken.Service.GeocodingService;
 import com.tradiesKraken.Service.UserService;
 import com.tradiesKraken.Repository.LocationRepository;
 
@@ -32,6 +35,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private ModelToDto modelToDto;
 
+    // @Autowired
+    // private GeocodingService geocodingService;
+
     @Override
     public UserDto create(SignUpRequest userRequest) {
 
@@ -48,13 +54,22 @@ public class UserServiceImpl implements UserService {
         user.setRating(0);
         user.setNoOfRatings(0);
 
-        Location location = new Location();
-        location.setLatitude("13434545134");
-        location.setLongitude("546554345");
+        // GeocodingResponse geocodingResponse =
+        // this.geocodingService.getCoordinatesForZipcode(userRequest.getZipCode());
 
+        // System.out.println("This is geocoding response " + geocodingResponse);
+
+        // Geometry geometry = geocodingResponse.getGeometry();
+
+        // System.out.println("This is geometry " + geometry);
+
+        // Location location = geometry.getLocation();
+        Location location = new Location();
+        System.out.println("This is location " + location);
         location = this.locationRepository.save(location);
 
         user.setLocation(location);
+        System.out.println("This is user after setting location" + user);
 
         user = this.userRepository.save(user);
 
